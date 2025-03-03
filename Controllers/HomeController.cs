@@ -19,7 +19,7 @@ namespace DocumentationAndReports.Controllers
         public IActionResult Index()
         {
             List<Schedule> objScheduleList = _db.Schedules.ToList();
-            return View();
+            return View(objScheduleList);
         }
 
         public IActionResult Privacy()

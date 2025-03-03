@@ -1,4 +1,6 @@
-﻿<!-- Schedule Section -->
+﻿@model List<Schedule>
+
+<!-- Schedule Section -->
 <section class="page-section" id="schedule">
     <div class="container">
         <h2 class="text-center mt-0">Розклад чергувань</h2>
@@ -29,14 +31,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each soldiers as |soldier index|}}
-                    <tr>
-                        <th scope="row">{{soldier.id}}</th>
-                        <td>{{soldier.date}}</td>
-                        <td>{{soldier.type}}</td>
-                        <td>{{soldier.soldier_name}}</td>
-                    </tr>
-                    {{/each}}
+                    @foreach(var obj in Model) {
+                        <tr>
+                            <th scope="row">@obj.Id</th>
+                            <td>@obj.Date</td>
+                            <td>@obj.Type</td>
+                            <td>@obj.SoldierName</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
