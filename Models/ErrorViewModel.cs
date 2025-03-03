@@ -1,4 +1,4 @@
-namespace DocumentationAndReports.Models
+﻿namespace DocumentationAndReports.Models
 {
     public class ErrorViewModel
     {
