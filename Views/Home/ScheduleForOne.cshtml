@@ -1,0 +1,47 @@
+﻿@model List<Schedule> 
+
+<!--Search Results Section -->
+<section class="page-section" id="search-results">
+    <div class="container">
+        <h2 class="text-center mt-0">Результати пошуку</h2>
+        <hr class="divider my-4">
+
+        <!-- Кнопка повернення назад -->
+        <div class="d-flex justify-content-between mb-4">
+            <a href="/" class="btn btn-secondary">Повернутися назад</a>
+        </div>
+         @if (Model != null && Model.Any())
+        {
+            <!-- Таблиця з результатами пошуку -->
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Дата</th>
+                            <th scope="col">Тип</th>
+                            <th scope="col">Ім'я</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var obj in Model)
+                        {
+                            <tr>
+                                <th scope="row">@obj.Id</th>
+                                <td>@obj.Date</td>
+                                <td>@obj.Type</td>
+                                <td>@obj.SoldierName</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-warning text-center" role="alert">
+                Нічого не знайдено! Спробуйте ще раз.
+            </div>
+        }
+    </div>
+</section>

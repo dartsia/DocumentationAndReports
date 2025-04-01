@@ -19,11 +19,9 @@ public partial class DutyScheduleContext : DbContext
 
     public virtual DbSet<Soldier> Soldiers { get; set; }
 
-    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //=> optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=duty-schedule;Username=darchyk;Password=darchyk_demib0y;TrustServerCertificate=True;");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
         modelBuilder.Entity<Schedule>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("schedule_pkey");
